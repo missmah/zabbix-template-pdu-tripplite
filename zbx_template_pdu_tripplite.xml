@@ -196,7 +196,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Device Input Frequency</name>
+                    <name>Device AC Input Frequency (Primary)</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                     <multiplier>1</multiplier>
@@ -228,7 +228,7 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>The present input frequency.</description>
+                    <description>The present Primary AC input frequency.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -239,19 +239,19 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Device Input Voltage</name>
+                    <name>Device AC Input Frequency (Secondary)</name>
                     <type>4</type>
                     <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                    <multiplier>0</multiplier>
-                    <snmp_oid>.1.3.6.1.2.1.33.1.3.3.1.3.1</snmp_oid>
-                    <key>upsInputVoltage</key>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.2.1.33.1.3.3.1.2.2</snmp_oid>
+                    <key>upsInputFrequency.2</key>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units>Volts</units>
+                    <units>Hertz</units>
                     <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
@@ -260,7 +260,7 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <formula>1</formula>
+                    <formula>0.1</formula>
                     <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
@@ -271,7 +271,7 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>The magnitude of the present input voltage.</description>
+                    <description>The present Secondary AC input frequency.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -281,6 +281,93 @@
                     <valuemap/>
                     <logtimefmt/>
                 </item>
+
+                <item>
+                  <name>Device AC Input Voltage (Primary)</name>
+                  <type>4</type>
+                  <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                  <multiplier>0</multiplier>
+                  <snmp_oid>.1.3.6.1.2.1.33.1.3.3.1.3.1</snmp_oid>
+                  <key>upsInputVoltage</key>
+                  <delay>30</delay>
+                  <history>90</history>
+                  <trends>365</trends>
+                  <status>0</status>
+                  <value_type>3</value_type>
+                  <allowed_hosts/>
+                  <units>Volts</units>
+                  <delta>0</delta>
+                  <snmpv3_contextname/>
+                  <snmpv3_securityname/>
+                  <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                  <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                  <snmpv3_authpassphrase/>
+                  <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                  <snmpv3_privpassphrase/>
+                  <formula>1</formula>
+                  <delay_flex/>
+                  <params/>
+                  <ipmi_sensor/>
+                  <data_type>0</data_type>
+                  <authtype>0</authtype>
+                  <username/>
+                  <password/>
+                  <publickey/>
+                  <privatekey/>
+                  <port/>
+                  <description>The magnitude of the present primary AC input voltage.</description>
+                  <inventory_link>0</inventory_link>
+                  <applications>
+                    <application>
+                      <name>PDU</name>
+                    </application>
+                  </applications>
+                  <valuemap/>
+                  <logtimefmt/>
+                </item>
+                <item>
+                  <name>Device AC Input Voltage (Secondary)</name>
+                  <type>4</type>
+                  <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                  <multiplier>0</multiplier>
+                  <snmp_oid>.1.3.6.1.2.1.33.1.3.3.1.3.2</snmp_oid>
+                  <key>upsInputVoltage.2</key>
+                  <delay>30</delay>
+                  <history>90</history>
+                  <trends>365</trends>
+                  <status>0</status>
+                  <value_type>3</value_type>
+                  <allowed_hosts/>
+                  <units>Volts</units>
+                  <delta>0</delta>
+                  <snmpv3_contextname/>
+                  <snmpv3_securityname/>
+                  <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                  <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                  <snmpv3_authpassphrase/>
+                  <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                  <snmpv3_privpassphrase/>
+                  <formula>1</formula>
+                  <delay_flex/>
+                  <params/>
+                  <ipmi_sensor/>
+                  <data_type>0</data_type>
+                  <authtype>0</authtype>
+                  <username/>
+                  <password/>
+                  <publickey/>
+                  <privatekey/>
+                  <port/>
+                  <description>The magnitude of the present secondary AC input voltage.</description>
+                  <inventory_link>0</inventory_link>
+                  <applications>
+                      <application>
+                          <name>PDU</name>
+                      </application>
+                  </applications>
+                  <valuemap/>
+                  <logtimefmt/>
+                </item>
                 <item>
                     <name>Device Output Current</name>
                     <type>4</type>
@@ -288,6 +375,51 @@
                     <multiplier>1</multiplier>
                     <snmp_oid>.1.3.6.1.2.1.33.1.4.4.1.3.1</snmp_oid>
                     <key>upsOutputCurrent</key>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>Amps</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1.0</formula>
+              <!--  <formula>0.1</formula> -->
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The present output current.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>PDU</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+              <!--
+                <item>
+                    <name>Device Output Load Current</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.850.100.1.4.7.1.3</snmp_oid>
+                    <key>tlUpsOutputCircuitLoadCurrent</key>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -314,7 +446,7 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>The present output current.</description>
+                    <description>The present output load current (A).</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -324,6 +456,50 @@
                     <valuemap/>
                     <logtimefmt/>
                 </item>
+                <item>
+                    <name>Device Outlet Load Current</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>1</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.850.100.1.10.2.1.13</snmp_oid>
+                    <key>tlUpsOutletCurrent</key>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units>Amps</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>0.1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The present output load current (A).</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>PDU</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+            -->
                 <item>
                     <name>Device Output Source</name>
                     <type>4</type>
@@ -682,24 +858,20 @@
             <discovery_rules/>
             <macros>
                 <macro>
-                    <macro>{$SNMP_COMMUNITY}</macro>
-                    <value>tripplite</value>
-                </macro>
-                <macro>
                     <macro>{$MAX_INPUTVOLTAGE}</macro>
                     <value>125</value>
                 </macro>
                 <macro>
                     <macro>{$MIN_INPUTVOLTAGE}</macro>
-                    <value>115</value>
+                    <value>110</value>
                 </macro>
                 <macro>
                     <macro>{$MAX_OUTPUTCURRENT_WARNING}</macro>
-                    <value>15</value>
+                    <value>12</value>
                 </macro>
                 <macro>
                     <macro>{$MAX_OUTPUTCURRENT_CRITICAL}</macro>
-                    <value>18</value>
+                    <value>15</value>
                 </macro>
             </macros>
             <templates>
@@ -736,7 +908,7 @@
         </trigger>
          <trigger>
             <expression>{Template SNMP PDU Tripplite:upsInputVoltage.last(#3)}&lt;{$MIN_INPUTVOLTAGE}</expression>
-            <name>PDU Power Voltage Too Low</name>
+            <name>PDU Primary Power Voltage Too Low</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -746,7 +918,27 @@
         </trigger>
          <trigger>
             <expression>{Template SNMP PDU Tripplite:upsInputVoltage.last()}&gt;{$MAX_INPUTVOLTAGE}</expression>
-            <name>PDU Power Voltage Too High</name>
+            <name>PDU Primary Power Voltage Too High</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+         <trigger>
+            <expression>{Template SNMP PDU Tripplite:upsInputVoltage.2.last(#3)}&lt;{$MIN_INPUTVOLTAGE}</expression>
+            <name>PDU Secondary Power Voltage Too Low</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+         <trigger>
+            <expression>{Template SNMP PDU Tripplite:upsInputVoltage.2.last()}&gt;{$MAX_INPUTVOLTAGE}</expression>
+            <name>PDU Secondary Power Voltage Too High</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -841,7 +1033,7 @@
              </graph_items>
         </graph>
         <graph>
-            <name>Input Frecuency</name>
+            <name>Input Frequency</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
