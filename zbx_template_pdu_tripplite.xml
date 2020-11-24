@@ -704,10 +704,10 @@
             </macros>
             <templates>
                 <template>
-                    <name>Template SNMP Generic</name>
+                    <name>Template Module Generic SNMP</name>
                 </template>
                 <template>
-                    <name>Template SNMP Interfaces</name>
+                    <name>Template Module Interfaces SNMP</name>
                 </template>
             </templates>
             <screens/>
